@@ -19,4 +19,7 @@ public interface FinalExamRepo extends JpaRepository<FinalExamEntity, Integer> {
     @Query("select new map(f.candidatesurname, count(f.slno)) from FinalExamEntity as f group by f.candidatesurname")
     List<Map> getByJoin2();
 
+    @Query("select new map(f.candidatesurname, count(f.slno)) from FinalExamEntity as f group by f.candidatesurname")
+    List<?> getByJoin3();
+
 }

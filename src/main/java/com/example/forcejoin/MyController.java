@@ -89,12 +89,15 @@ public class MyController {
         for (Map m : objects) {
 
             System.out.println(m.get("0") + " " + m.get("1"));
-
         }
+    }
 
+    @ResponseBody
+    @GetMapping("/get-custom-3")
+    public void getCustom3() {
 
-//        objects.forEach(object -> {
-//            System.out.println(object[0] + " " + object[1]);
-//        });
+        List<?> list = finalExamRepo.getByJoin3();
+
+        list.forEach(System.out::println);
     }
 }
